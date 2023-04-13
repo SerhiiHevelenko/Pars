@@ -2,7 +2,7 @@ def parsing(adresa_komirku):
 
     from openpyxl import load_workbook, Workbook
 
-    book = load_workbook(filename="Замовлення Госп.Товарів (12).xlsx")
+    book = load_workbook(filename="06.04.2023.xlsx")
     sheet = book.active
 
     wb = Workbook()
@@ -16,7 +16,7 @@ def parsing(adresa_komirku):
             continue
         ws["A" + str(i)] = sheet["A" + str(i)].value
         ws["B" + str(i)] = sheet[adresa_komirku + str(i)].value
-        ws["C" + str(i)] = sheet["Y" + str(i)].value
+        ws["C" + str(i)] = sheet["AC" + str(i)].value
 
     book_shop.save(shop_name)
     book_shop.close()
